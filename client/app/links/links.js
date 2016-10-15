@@ -1,12 +1,14 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, $http, Links) {
   // Your code here
-  var linkData = Links.getAll().then(function(response) {
-    $scope.data = response;
-  }, function (err) {
-    console.log(err);
+  $scope.data = {};
+
+  Links.getAll().then(function(links) { 
+    console.log('links in getAll', links);
+    $scope.data.links = links;
+  }).catch(function (error) {
+    console.error(error);
   });
 
-  console.log('CONTROLLER IN LINKS', $scope.data);
 });

@@ -6,8 +6,11 @@ angular.module('shortly', [
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
-  console.log('ROUTER IN APP.JS');
   $routeProvider
+    .when('/', {
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
+    })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
