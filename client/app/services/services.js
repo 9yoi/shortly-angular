@@ -14,11 +14,13 @@ angular.module('shortly.services', [])
   };
   // post to db
   var addOne = function (link) {
+    console.log('running addone in service');
     return $http({
       method: 'POST',
       url: '/api/links',
-      data: JSON.stringify(link)
+      data: link
     }).then(function(resp) {
+      console.log('resp in addOne', resp);
       return resp;
     });
   };
@@ -37,12 +39,14 @@ angular.module('shortly.services', [])
   // after you signin/signup open devtools, click resources,
   // then localStorage and you'll see your token from the server
   var signin = function (user) {
+    console.log('attempting signin');
     return $http({
       method: 'POST',
       url: '/api/users/signin',
       data: user
     })
     .then(function (resp) {
+      console.log('sign in promise success');
       return resp.data.token;
     });
   };

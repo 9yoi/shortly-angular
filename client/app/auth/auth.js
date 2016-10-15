@@ -8,6 +8,7 @@ angular.module('shortly.auth', [])
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {
+        console.log('inside of auth.js', token);
         $window.localStorage.setItem('com.shortly', token);
         $location.path('/links');
       })

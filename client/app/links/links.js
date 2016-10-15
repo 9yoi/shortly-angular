@@ -5,8 +5,14 @@ angular.module('shortly.links', [])
   $scope.data = {};
 
   Links.getAll().then(function(links) { 
-    console.log('links in getAll', links);
     $scope.data.links = links;
+    data = $scope.data.links
+  }).then(function parseLinks() {
+    // extrac link information such as title, png, url, code,
+    scope.data
+    code
+
+
   }).catch(function (error) {
     console.error(error);
   });
