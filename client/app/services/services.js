@@ -24,10 +24,21 @@ angular.module('shortly.services', [])
       return resp;
     });
   };
+  var navLink = function (code) {
+    console.log('code in services: ', code);
+    return $http({
+      method: 'GET',
+      url: '/getCode/' + code,
+    }).then(function(resp) {
+      console.log('resp in services', resp);
+      return resp;
+    });
+  };
 
   return {
     addOne: addOne,
-    getAll: getAll 
+    getAll: getAll,
+    navLink: navLink 
   };
 })
 .factory('Auth', function ($http, $location, $window) {

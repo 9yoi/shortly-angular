@@ -7,6 +7,17 @@
   </head>
   <body>
     <h1>Shortly</h1>
+    <nav>
+      <div class="navigation" ng-controller='navBar'> 
+        <ul>
+          <li ng-click='navLinks()'> <a> Links </a> </li>
+          <li ng-click='navShorten()'> <a> Shorten </a> </li>
+          <li ng-click='navSignIn()'> <a> Sign In </a> </li>
+          <li ng-click='navSignUp()'> <a> Sign Up </a> </li>
+          <li ng-click='navLogOut()'> <a> Logout </a> </li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>

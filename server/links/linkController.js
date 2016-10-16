@@ -20,7 +20,6 @@ module.exports = {
   },
 
   newLink: function (req, res, next) {
-    console.log('creating new link, likely problem with mongo/mongoose connection');
     var url = req.body.url;
     if (!util.isValidUrl(url)) {
       return next(new Error('Not a valid url'));
@@ -56,8 +55,10 @@ module.exports = {
   },
 
   navToLink: function (req, res, next) {
+    console.log('nav to Link in link controller', req.params.code);
     findLink({code: req.params.code})
       .then(function (link) {
+        console.log('link we are accessing', link);
         if (!link) {
           return next(new Error('Link not added yet'));
         }

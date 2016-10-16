@@ -5,6 +5,23 @@ angular.module('shortly', [
   'shortly.auth',
   'ngRoute'
 ])
+.controller('navBar', function($scope, $location) {
+  $scope.navLinks = function () {
+    $location.path('/links');
+  };
+  $scope.navShorten = function () {
+    $location.path('/shorten');
+  };
+  $scope.navSignIn = function () {
+    $location.path('/signin');
+  };
+  $scope.navSignUp = function () {
+    $location.path('/signup');
+  };
+  $scope.navLogOut = function () {
+    $location.path('/signin');
+  };
+})
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {

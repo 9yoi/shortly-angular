@@ -1,12 +1,15 @@
 <div id='container' ng-controller="LinksController">
   <!-- Your html here -->
   <title>Hello Links</title>
-    <div class="link" ng-repeat='link in data.links'>
-        <span class="title">{{link.title}}</span>
-        <span class="original">{{link.url}}</span>
-        <span class="info">{{link.baseUrl + '/' + link.code}} </span>
-        <div class="visits">
-          <span class="count">{{link.visits}}</span> Visits
-        </div>
+    <div class="search">
+      Filter Results: <input ng-model="search">
+    </div>
+    <div class="link"  ng-repeat='link in data.links | filter: search' ng-click='openLink(link.code)'>
+      <span class="title">{{link.title}}</span>
+      <span class="original">{{link.url}}</span>
+      <span class="info">{{link.baseUrl + '/' + link.code}} </span>
+      <div class="visits">
+        <span class="count">{{link.visits}}</span> Visits
+      </div>
     </div> 
 </div>
