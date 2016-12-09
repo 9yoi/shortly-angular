@@ -1,2 +1,13 @@
-#shortly-angular
-This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
+##Angular playground
+
+Build out the front end of a MEAN stack app
+
+Angular
+Bcrypt
+Q
+JWT
+Mongoose
+Gulp
+Karma
+Mocha
+Sinon
